@@ -10,7 +10,7 @@ Also make sure to execute all migrations and seeding!
 
 ## Installation
 
-This app uses the package [](https://github.com/webpatser/laravel-countries)
+Make sure to run all migrations and seed the database! 
 
 ### Web-app shots.
 
