@@ -12,7 +12,7 @@
 */
 
 Route::get('/',function(){
-	return 'You are on the main page.';
+	return 'You are on the main page! Try /games /studios /members url!';
 });
 
 
