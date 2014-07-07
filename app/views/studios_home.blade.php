@@ -42,7 +42,7 @@
 							<a href="{{ action('StudiosController@edit', $studio->id) }}" class="btn btn-default"> {{ $studio->members->count() }}</a>
 						</td>
 						<td>
-							<img src="{{ $studio->logo }}" style="height:35px;border-radius:50px">
+							<img src="{{ $studio->logo }}" style="height:35px;width:35px;border-radius:50px">
 						</td>
 						<td>
 						<a href="{{ action('StudiosController@edit',$studio->id) }}" class="btn btn-default">Edit</a>

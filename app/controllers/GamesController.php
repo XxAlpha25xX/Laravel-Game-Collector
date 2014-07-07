@@ -48,6 +48,7 @@ class GamesController extends BaseController {
 			'fields_old'	=>	$fields_old,
 			'submit_to'		=>	action('GamesController@handleForm'),
 			'title'			=>	'Add game',
+			'submit_msg'	=>	'Create'
 			));
 	}
 
@@ -82,6 +83,7 @@ class GamesController extends BaseController {
 			'submit_to'		=>	action('GamesController@handleForm'),
 			'title'			=>	'Edit game',
 			'id'			=>	$game->id,
+			'submit_msg'	=>	'Save'
 			));
 	}
 
@@ -170,8 +172,10 @@ class GamesController extends BaseController {
 		$data 	 = Input::all();
 
 		//Set rules for validator.
+		$name_rule = 'required|alpha_num|min:2|max:20|unique:games,name';
+		$name_rule .= ($is_edit)?',' . Input::get('id'):'';
 		$rules = array(
-			'name'		=>	'required|alpha_num|min:2|max:20|unique:games,name',
+			'name'		=>	$name_rule,
 			'studio'	=>	'required|numeric|exists:studios,id',
 			'release'	=>	'required|date_format:Y-m-d',
 			'cover'		=>	'required|image'

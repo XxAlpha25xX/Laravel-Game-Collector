@@ -38,7 +38,7 @@
 							{{ $game->release }}
 						</td>
 						<td>
-							<img src="{{ $game->cover }}" style="height:35px;border-radius:50px">
+							<img src="{{ $game->cover }}" style="height:35px;width:35px;border-radius:50px">
 						</td>
 						<td>
 						<a href="{{ action('GamesController@edit',$game->id) }}" class="btn btn-default">Edit</a>

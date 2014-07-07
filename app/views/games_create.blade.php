@@ -66,8 +66,8 @@
 	{{ Form::file('cover',array('class'	=>	'form-control')) }}
 	</div>
 
-	{{ Form::submit('Add',array('class'	=>	'btn btn-primary')) }}
-	<a href="{{action('GamesController@home')}}">Cancel</a>
+	{{ Form::submit($submit_msg,array('class'	=>	'btn btn-primary')) }}
+	<a href="{{action('GamesController@home')}}">Go Back</a>
 
 	{{ Form::close() }}
 

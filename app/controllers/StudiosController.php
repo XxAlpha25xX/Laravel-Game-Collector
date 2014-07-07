@@ -48,6 +48,7 @@ class StudiosController extends BaseController {
 			'fields_old'	=>	$fields_old,
 			'submit_to'		=>	action('StudiosController@handleForm'),
 			'title'			=>	'Add Studio',
+			'submit_msg'	=>	'Create'
 			));
 	}
 
@@ -63,6 +64,7 @@ class StudiosController extends BaseController {
 	*
 	*/
 	public function edit(Studio $studio){
+
 
 		//Retrieve world regions to list in created form.
 		$world_regions = $this->get_world_regions();
@@ -82,6 +84,7 @@ class StudiosController extends BaseController {
 			'submit_to'		=>	action('StudiosController@handleForm'),
 			'title'			=>	'Edit Studio',
 			'id'			=>	$studio->id,
+			'submit_msg'	=>	'Save'
 			));
 	}
 
@@ -175,8 +178,10 @@ class StudiosController extends BaseController {
 		$data 	 = Input::all();
 
 		//Set rules for validator.
+		$name_rule = 'required|alpha_num|min:2|max:20|unique:studios,name';
+		$name_rule .= ($is_edit)?',' . Input::get('id'):'';
 		$rules = array(
-			'name'		=>	'required|alpha_num|min:2|max:20|unique:studios,name',
+			'name'		=>	$name_rule,
 			'country'	=>	'required|numeric|exists:countries,id',
 			'founded'	=>	'required|date_format:Y-m-d',
 			'logo'		=>	'required|image',

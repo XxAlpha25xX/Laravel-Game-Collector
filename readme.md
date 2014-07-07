@@ -8,6 +8,10 @@ This template it's ment to be used as a starting point, do not use as a finished
 
 Also make sure to execute all migrations and seeding! 
 
+## Installation
+
+This app uses the package [](https://github.com/webpatser/laravel-countries)
+
 ### Documentation
 
 **The documentation is not yet complete, you can generate your own with [PhpDocumentor](http://www.phpdoc.org) to see the ones finished.**

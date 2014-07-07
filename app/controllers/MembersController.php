@@ -61,7 +61,8 @@ class MembersController extends BaseController {
 			'title'			=>	'Add member',
 			'studies'		=>	$studies,
 			'roles'			=>	$roles,
-			'studios'		=>	$studios
+			'studios'		=>	$studios,
+			'submit_msg'	=>	'Create'
 			));
 	}
 
@@ -111,7 +112,8 @@ class MembersController extends BaseController {
 			'id'			=>	$member->id,
 			'studies'		=>	$studies,
 			'roles'			=>	$roles,
-			'studios'		=>	$studios
+			'studios'		=>	$studios,
+			'submit_msg'	=>	'Save'
 			));
 	}
 
@@ -248,8 +250,10 @@ class MembersController extends BaseController {
 		$data 	 = Input::all();
 
 		//Set rules for validator.
+		$name_rule = 'required|alpha_num|min:2|max:20|unique:members,name';
+		$name_rule .= ($is_edit)?',' . Input::get('id'):'';
 		$rules = array(
-			'name'		=>	'required|alpha_num|min:2|max:20|unique:members,name',
+			'name'		=>	$name_rule,
 			'studio'	=>	'required|numeric|exists:studios,id',
 			'bornt'		=>	'required|date_format:Y-m-d',
 			'face'		=>	'required|image',

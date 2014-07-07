@@ -4,7 +4,7 @@
 @section('content')
 
 	<div class="page-header">
-		<h1>Add game to {{ $member->name}}<small> from collection</small></h1>
+		<h1>Add game to {{ $member->name}}</h1>
 	</div>
 
 	{{ Form::open(array(

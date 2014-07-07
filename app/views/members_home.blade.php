@@ -50,7 +50,7 @@
 							<a href="" class="btn btn-default"> {{ $member->studio->name }}</a>
 						</td>
 						<td>
-							<img src="{{ $member->face }}" style="height:35px;border-radius:50px">
+							<img src="{{ $member->face }}" style="height:35px;width:35px;border-radius:50px">
 						</td>
 						<td>
 						<a href="{{ action('MembersController@edit',$member->id) }}" class="btn btn-default">Edit</a>

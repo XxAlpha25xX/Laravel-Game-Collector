@@ -65,8 +65,8 @@
 	{{ Form::file('logo',array('class'	=>	'form-control')) }}
 	</div>
 
-	{{ Form::submit('Add',array('class'	=>	'btn btn-primary')) }}
-	<a href="{{action('StudiosController@home')}}">Cancel</a>
+	{{ Form::submit($submit_msg,array('class'	=>	'btn btn-primary')) }}
+	<a href="{{action('StudiosController@home')}}">Go Back</a>
 
 	{{ Form::close() }}
 

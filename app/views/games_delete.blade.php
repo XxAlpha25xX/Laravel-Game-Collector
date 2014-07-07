@@ -3,7 +3,7 @@
 @section('content')
 
 	<div class="page-header">
-		<h1>Delete {{ $game->name}}<small>from collection</small></h1>
+		<h1>Delete {{ $game->name}}<small> from listing</small></h1>
 	</div>
 
 	{{ Form::open(array(

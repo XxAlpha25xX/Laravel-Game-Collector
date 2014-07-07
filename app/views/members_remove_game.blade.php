@@ -4,7 +4,7 @@
 @section('content')
 
 	<div class="page-header">
-		<h1>Remove game from {{ $member->name}}<small> from collection</small></h1>
+		<h1>Remove game from {{ $member->name}}</h1>
 	</div>
 
 	{{ Form::open(array(
@@ -32,8 +32,8 @@
 	{{ Form::hidden('id',$member->id) }}
 	@if (!$games->isEmpty())
 		{{ Form::submit('Yes',array('class'	=>	'btn btn-danger')) }}
-		<a href="{{ action('MembersController@home') }}" class="btn btn-default">Go back</a>
 	@endif
+	<a href="{{ action('MembersController@home') }}" class="btn btn-default">Go back</a>
 	{{ Form::close() }}
 
 @stop
