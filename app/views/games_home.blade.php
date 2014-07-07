@@ -29,7 +29,7 @@
 							{{ $game->name }}
 						</td>
 						<td>
-							{{ $game->studio->name }}
+							<a href="" class="btn btn-default"> {{ $game->studio->name }}</a>
 						</td>
 						<td>
 							<a href="" class="btn btn-default"> {{ $game->members->count() }}</a>

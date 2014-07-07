@@ -172,7 +172,7 @@ class GamesController extends BaseController {
 		$data 	 = Input::all();
 
 		//Set rules for validator.
-		$name_rule = 'required|alpha_num|min:2|max:20|unique:games,name';
+		$name_rule = 'required|min:2|max:20|unique:games,name';
 		$name_rule .= ($is_edit)?',' . Input::get('id'):'';
 		$rules = array(
 			'name'		=>	$name_rule,
